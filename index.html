@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kids Learning Fun</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #fff4c4, #d9f7ff);
+  text-align: center;
+  color: #333;
+}
+
+.header {
+  padding: 30px 15px 20px;
+}
+
+.header h1 {
+  font-size: 38px;
+  margin: 0;
+  color: #ff6b6b;
+}
+
+.header p {
+  font-size: 18px;
+  margin-top: 8px;
+}
+
+.games {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  padding: 20px;
+  max-width: 700px;
+  margin: auto;
+}
+
+.card {
+  border: none;
+  border-radius: 25px;
+  padding: 25px 10px;
+  background: white;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.card span {
+  display: block;
+  font-size: 45px;
+  margin-bottom: 10px;
+}
+
+.card:active {
+  transform: scale(0.95);
+}
+
+.game-screen {
+  display: none;
+  padding: 25px;
+}
+
+.question {
+  font-size: 28px;
+  font-weight: bold;
+  margin: 20px;
+}
+
+.answers {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.answer {
+  font-size: 35px;
+  background: white;
+  border: none;
+  border-radius: 20px;
+  padding: 25px;
+  min-width: 90px;
+  box-shadow: 0 5px 12px rgba(0,0,0,0.15);
+}
+
+.message {
+  font-size: 26px;
+  font-weight: bold;
+  margin: 25px;
+}
+
+.back {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 20px;
+  background: #ff6b6b;
+  color: white;
+  font-size: 18px;
+}
+</style>
+</head>
+
+<body>
+
+<div id="home">
+  <div class="header">
+    <h1>🌈 Kids Learning Fun 🌈</h1>
+    <p>Learn • Play • Enjoy!</p>
+  </div>
+
+  <div class="games">
+
+    <button class="card" onclick="startNumbers()">
+      <span>🔢</span>
+      Numbers
+    </button>
+
+    <button class="card">
+      <span>🔤</span>
+      Alphabets
+    </button>
+
+    <button class="card">
+      <span>🐶</span>
+      Animals
+    </button>
+
+    <button class="card">
+      <span>🎨</span>
+      Colors
+    </button>
+
+    <button class="card">
+      <span>🔺</span>
+      Shapes
+    </button>
+
+    <button class="card">
+      <span>🍎</span>
+      Fruits
+    </button>
+
+    <button class="card">
+      <span>🚗</span>
+      Vehicles
+    </button>
+
+    <button class="card">
+      <span>🐦</span>
+      Birds
+    </button>
+
+    <button class="card">
+      <span>🥕</span>
+      Vegetables
+    </button>
+
+    <button class="card">
+      <span>🐄</span>
+      Farm Animals
+    </button>
+
+  </div>
+</div>
+
+<div id="numberGame" class="game-screen">
+
+  <h1>🔢 Numbers Game</h1>
+
+  <div class="question">
+    Which number is TWO?
+  </div>
+
+  <div class="answers">
+    <button class="answer" onclick="wrong()">1</button>
+    <button class="answer" onclick="correct()">2</button>
+    <button class="answer" onclick="wrong()">3</button>
+  </div>
+
+  <div id="message" class="message"></div>
+
+  <button class="back" onclick="goHome()">🏠 Home</button>
+
+</div>
+
+<script>
+
+function startNumbers() {
+  document.getElementById("home").style.display = "none";
+  document.getElementById("numberGame").style.display = "block";
+}
+
+function correct() {
+  document.getElementById("message").innerHTML =
+    "🎉 Congratulations! 🎉<br>⭐ Correct Answer! ⭐";
+}
+
+function wrong() {
+  document.getElementById("message").innerHTML =
+    "😊 Oops! Try Again!";
+}
+
+function goHome() {
+  document.getElementById("numberGame").style.display = "none";
+  document.getElementById("home").style.display = "block";
+  document.getElementById("message").innerHTML = "";
+}
+
+</script>
+
+</body>
+</html>
